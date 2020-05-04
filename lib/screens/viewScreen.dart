@@ -187,7 +187,7 @@ class _ViewScreenState extends State<ViewScreen> {
                           ],
                         )),
                   ),
-                  // call and sms
+                  // call & sms
                   Card(
                     elevation: 2.0,
                     child: Container(
