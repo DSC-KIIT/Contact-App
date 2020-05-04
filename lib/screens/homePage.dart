@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
   navigateToViewContacts(id) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (BuildContext context) {
-      return ViewScreen();
+      return ViewScreen(id);
     }));
   }
 
