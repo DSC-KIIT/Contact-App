@@ -52,7 +52,7 @@ class _ViewScreenState extends State<ViewScreen> {
 
   navigateToEditScreen(id) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-      return EditScreen();
+      return EditScreen(id);
     }));
   }
 
