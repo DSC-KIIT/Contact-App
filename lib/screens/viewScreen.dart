@@ -107,7 +107,7 @@ class _ViewScreenState extends State<ViewScreen> {
                       child: Image(
                         //
                         image: _contact.photoUrl == "empty"
-                            ? AssetImage("images/placeholder.png")
+                            ? AssetImage("assets/mascot.png")
                             : NetworkImage(_contact.photoUrl),
                         fit: BoxFit.contain,
                       )),
