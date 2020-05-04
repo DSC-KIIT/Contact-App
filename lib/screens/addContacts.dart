@@ -21,7 +21,7 @@ class _AddContactState extends State<AddContact> {
   String _address = '';
   String _photoUrl = "empty";
 
-  saveContact(context) async {
+  saveContact(BuildContext context) async {
     if (_firstName.isNotEmpty &&
         _lastName.isNotEmpty &&
         _phone.isNotEmpty &&
@@ -37,14 +37,15 @@ class _AddContactState extends State<AddContact> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Field required'),
-              content: Text('All fields are required'),
+              title: Text("Empty Fields"),
+              content: Text("Please fill all the fields"),
               actions: <Widget>[
                 FlatButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('Close')),
+                  child: Text("Ok"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
               ],
             );
           });
@@ -177,6 +178,20 @@ class _AddContactState extends State<AddContact> {
                     labelText: 'Address',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0))),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 20.0),
+              child: RaisedButton(
+                padding: EdgeInsets.fromLTRB(100, 20, 100, 20),
+                onPressed: () {
+                  saveContact(context);
+                },
+                color: Colors.red,
+                child: Text('SAVE',
+                    style: TextStyle(fontSize: 20.0, color: Colors.white)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
               ),
             )
           ]),
