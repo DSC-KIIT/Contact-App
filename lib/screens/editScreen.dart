@@ -37,7 +37,6 @@ class _EditScreenState extends State<EditScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.getContact(id);
   }
@@ -73,14 +72,8 @@ class _EditScreenState extends State<EditScreen> {
         _phone.isNotEmpty &&
         _email.isNotEmpty &&
         _address.isNotEmpty) {
-      Contact contact = Contact.withId(
-          this.id,
-          this._firstName,
-          this._lastName,
-          this._phone,
-          this._email,
-          this._address,
-          this._photoUrl);
+      Contact contact = Contact.withId(this.id, this._firstName, this._lastName,
+          this._phone, this._email, this._address, this._photoUrl);
 
       await _databaseReference.child(id).set(contact.toJson());
       navigateTolLastScreen(context);
@@ -132,7 +125,7 @@ class _EditScreenState extends State<EditScreen> {
     Navigator.pop(context);
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -279,5 +272,4 @@ class _EditScreenState extends State<EditScreen> {
       ),
     );
   }
-
 }
