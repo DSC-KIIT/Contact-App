@@ -96,9 +96,88 @@ class _AddContactState extends State<AddContact> {
                         height: 100,
                         width: 100,
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        )),
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: _photoUrl == "empty"
+                                    ? AssetImage("assets/mascot.png")
+                                    : NetworkImage(_photoUrl),
+                                fit: BoxFit.cover))),
                   )),
+            ),
+            //First Name
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _firstName = value;
+                  });
+                },
+                decoration: InputDecoration(
+                    labelText: 'First Name',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+            ),
+            //Last Name
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _lastName = value;
+                  });
+                },
+                decoration: InputDecoration(
+                    labelText: 'Last Name',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+            ),
+            //Phone
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _phone = value;
+                  });
+                },
+                decoration: InputDecoration(
+                    labelText: 'Phone Number',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+            ),
+            //Email
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _email = value;
+                  });
+                },
+                decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
+            ),
+            //Address
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: TextField(
+                onChanged: (value) {
+                  setState(() {
+                    _address = value;
+                  });
+                },
+                decoration: InputDecoration(
+                    labelText: 'Address',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0))),
+              ),
             )
           ]),
         ),
